@@ -1,0 +1,33 @@
+# Configuración versionada del DSS (Tema 31 · Destinos turísticos)
+# Cualquier cambio de umbral debe hacerse por pull request y justificarse en docs/INFORME_TECNICO.md
+
+split:
+  train_end: 201712      # entrenamiento: visitas hasta dic-2017
+  val_end: 201812        # validación: visitas de 2018 (ajuste de pesos)
+  # prueba: visitas desde ene-2019 (incluye 2020-2022, con muy pocos datos por COVID)
+
+evaluation:
+  k_values: [3, 5]
+  primary_k: 3
+
+models:
+  context:
+    smoothing_m: 50       # pseudo-conteos hacia la popularidad global de la ciudad
+    w_mode: 0.6           # peso del modo de viaje frente al continente de origen
+  hybrid:
+    rating_smoothing_m: 20
+    weight_grid:          # (contexto, contenido, calidad) evaluados en validación
+      - [1.0, 0.0, 0.0]
+      - [0.7, 0.3, 0.0]
+      - [0.6, 0.3, 0.1]
+      - [0.5, 0.4, 0.1]
+      - [0.5, 0.3, 0.2]
+      - [0.4, 0.4, 0.2]
+      - [0.3, 0.5, 0.2]
+
+dss:
+  default_k: 3
+  max_per_type: 1               # regla de diversidad: como máximo 1 atracción por tipo en el top-k
+  min_context_support: 30       # visitas mínimas del modo de viaje en la ciudad para confiar en el contexto
+  min_item_support: 30          # visitas mínimas de una atracción para no marcarla como "evidencia limitada"
+  tie_margin: 0.02              # si el último elegido y el siguiente difieren menos que esto -> revisión humana

@@ -1,0 +1,28 @@
+[project]
+name = "tourism-dss"
+version = "1.0.0"
+description = "DSS recomendador de atracciones turísticas basado en contenido y contexto (INF-8239, Tema 31)"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "openpyxl>=3.1",
+    "pyyaml>=6.0",
+    "streamlit>=1.38",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tourism_dss"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: requiere los datos reales en data/raw"]
