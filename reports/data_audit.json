@@ -1,0 +1,71 @@
+{
+  "interactions": 52930,
+  "users": 33530,
+  "attractions": 30,
+  "cities": {
+    "Bali": 10,
+    "Malang": 10,
+    "Yogyakarta": 10
+  },
+  "types": 17,
+  "period": [
+    201301,
+    202210
+  ],
+  "visits_per_year": {
+    "2013": 2983,
+    "2014": 4808,
+    "2015": 8687,
+    "2016": 12823,
+    "2017": 9444,
+    "2018": 7461,
+    "2019": 5913,
+    "2020": 529,
+    "2021": 35,
+    "2022": 247
+  },
+  "users_with_2plus_visits": 10618,
+  "repeat_user_attraction_pairs": 7655,
+  "visits_per_attraction_min_median_max": [
+    28,
+    379,
+    13198
+  ],
+  "rating_distribution": {
+    "1": 1263,
+    "2": 2035,
+    "3": 7730,
+    "4": 17966,
+    "5": 23936
+  },
+  "mode_distribution": {
+    "Couples": 21620,
+    "Family": 15217,
+    "Friends": 10945,
+    "Solo": 4525,
+    "Business": 623
+  },
+  "continent_distribution": {
+    "Asia": 15693,
+    "Australia & Oceania": 14852,
+    "Europe": 13278,
+    "America": 8187,
+    "Africa": 920
+  },
+  "known_issues": [
+    "Item.AttractionCityId no es llave de City: se mapea a Bali/Malang/Yogyakarta",
+    "Muy pocas visitas desde 2020 (COVID): la prueba se concentra en 2019",
+    "Popularidad muy concentrada entre atracciones"
+  ],
+  "raw_sha256": {
+    "Transaction": "cf4d4f49402d9528",
+    "Item": "3cfbd728c8660e87",
+    "Type": "3e1888d2df751921",
+    "Mode": "c33a3ad697ba3462",
+    "User": "5aebe6b97555657c",
+    "Continent": "9c0ac1969bb6cb8a",
+    "Region": "ba41584a40c0fdbd",
+    "Country": "14fcf2afb03b865c",
+    "City": "44db59401944ffb6"
+  }
+}
