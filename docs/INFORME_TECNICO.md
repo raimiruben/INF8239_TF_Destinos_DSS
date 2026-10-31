@@ -10,7 +10,7 @@ según el contexto del viaje (modo: pareja, familia, amigos, solo o negocios; or
 entrega una lista priorizada con explicación, reglas explícitas, alternativas visibles y un estado
 (GO, REVISIÓN, ABSTENCIÓN o DETENIDO) que indica cuándo debe intervenir el humano. No decide por el planificador.
 
-Alcance comprometido para 4 integrantes: baseline + 2 modelos, ≥ 8 pruebas (se entregan 17), documentación,
+Alcance comprometido para 4 integrantes: baseline + 2 modelos, ≥ 8 pruebas (se entregan 18), documentación,
 demostración y RACI (`docs/RACI.md`).
 
 ## 2. Datos (responsable: Raimi)
@@ -109,7 +109,7 @@ priorizadas con sus componentes, la sección "qué representa y qué no permite 
 - Registro de 10 riesgos con control, responsable y evidencia (`docs/RISK_REGISTER.md`).
 - Privacidad: usuarios anonimizados; el origen se usa solo a nivel continente, de forma opcional, y se audita.
 - Licencia: uso académico, crudos no versionados, DOI citado.
-- Reproducibilidad: `uv.lock`, configuración versionada, huellas SHA-256 de los datos, 17 pruebas y CI.
+- Reproducibilidad: `uv.lock`, configuración versionada, huellas SHA-256 de los datos, 18 pruebas y CI.
 
 ## 8. Conclusión accionable
 

@@ -12,7 +12,7 @@ La IA generativa tuvo un papel **importante** en este proyecto. El equipo lo dec
 |-|-|-|
 |Evaluación de datasets|Claude, a partir de los PDF del mandato y del tema y de los datasets propuestos por el equipo|El equipo propuso el dataset de Kaggle *Travel \& Tourism* y aportó el de Mendeley; decidió usar el de Mendeley tras revisar el análisis|
 |Código (`src/tourism\_dss/`, `scripts/`, `app.py`)|Generado por Claude|Cada integrante copió su módulo, lo ejecutó con los datos reales y lo subió desde su cuenta|
-|Pruebas automáticas (`tests/`, 17 pruebas)|Generadas por Claude|Cada integrante ejecutó las pruebas de su módulo antes de abrir su PR|
+|Pruebas automáticas (`tests/`, 18 pruebas)|Generadas por Claude|Cada integrante ejecutó las pruebas de su módulo antes de abrir su PR|
 |Configuración (`configs/dss.yml`, `pyproject.toml`, CI)|Generada por Claude|Sin cambios del equipo|
 |Reportes (`reports/`)|Generados por los scripts al ejecutarlos el equipo|Raimi generó `data\_audit.json`; Victoria generó los reportes de evaluación|
 |Ayuda en la organización del trabajo en Git (repo, issues, ramas, PR, revisiones)|Se usó Claude como guía |Ejecutado por cada integrante en su computadora y en GitHub|
@@ -45,6 +45,7 @@ Las verificaciones consistieron en **ejecutar** el código y comprobar que las s
 |Conteo esperado de archivos del zip (51) en la guía de Raimi|Al descomprimir salieron 38|El 51 incluía carpetas; los 38 archivos eran correctos|
 |Ejecución de un script escribiendo solo su nombre (`scripts/prepare\_data.py`)|Error "is not recognized" en PowerShell durante la revisión del PR de datos|Se ejecuta con `uv run python scripts/prepare\_data.py`; se agregó la advertencia a las guías|
 |El revisor del PR de datos no fue el del RACI|Alexis aún no tenía acceso al repo|Revisó Victoria; quedó registrado en el RACI|
+| La explicación decía «tipo X, que te interesa» aunque solo coincidía la familia temática | Al revisar la app con escenarios propios (Bali y Malang) | Se distingue tipo exacto de familia temática, se avisa si un interés no existe en la ciudad y se agregó una prueba |
 
 ## 5\. Límites y responsabilidad
 

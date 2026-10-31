@@ -107,6 +107,14 @@ class TourismDSS:
             status = "ABSTAIN"
             warnings.append("Sin historial ni intereses declarados: el sistema se abstiene de personalizar. "
                             "La lista es general (contexto y calidad). Pida al viajero sus intereses.")
+        if ctx.interests:
+            city_types = set(att.loc[self.model.city_items[ctx.city], "type"])
+            missing = [t for t in ctx.interests if t not in city_types]
+            if len(missing) == len(ctx.interests):
+                warnings.append(f"Ninguno de los intereses declarados existe en {ctx.city}; la afinidad se basa solo "
+                                "en la familia temática.")
+            elif missing:
+                warnings.append(f"No hay atracciones de tipo {', '.join(missing)} en {ctx.city}.")
         support_ctx = int(self.model.mode_city_support.get((ctx.mode, ctx.city), 0)) if ctx.mode else 0
         if ctx.mode is None:
             warnings.append("No se indicó el modo de viaje: el contexto usa solo la popularidad general.")
@@ -131,8 +139,14 @@ class TourismDSS:
         support = int(self.model.pop[a])
         reasons = []
         if comps.loc[a, "content"] > 0:
-            origin = "te interesa" if source == "intereses declarados" else "has visitado antes"
-            reasons.append(f"tipo «{att['type']}» ({att['family']}), que {origin}")
+            types, _, _ = self.model.profile(ctx)
+            declared = source == "intereses declarados"
+            if att["type"] in types:
+                reasons.append(f"tipo «{att['type']}», que " + ("te interesa" if declared else "has visitado antes"))
+            else:  # solo coincide la familia temática, no el tipo exacto
+                reasons.append(f"misma familia temática ({att['family']}) que "
+                               + ("tus intereses" if declared else "lo que has visitado")
+                               + f"; el tipo «{att['type']}» no está entre ellos")
         if ctx.mode:
             share = comps.loc[a, "share_mode"]
             reasons.append(f"{share:.0%} de las visitas de viajeros en {MODE_ES.get(ctx.mode, ctx.mode)} en {ctx.city} "

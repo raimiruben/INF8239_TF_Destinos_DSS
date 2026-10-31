@@ -19,14 +19,14 @@ Regla de la ficha TF.31: **cada persona posee al menos un entregable y revisa ot
 |Revisión de PR (par asignado)|revisa Mario|revisa Victoria|revisa Alexis|revisa Raimi|
 |Demostración integrada|R (datos)|R (modelos)|R (evidencia)|**A**/R (app)|
 
-## Pruebas por responsable (17 en total; mínimo exigido 8)
+## Pruebas por responsable (18 en total; mínimo exigido 8)
 
 |Archivo|Pruebas|Responsable|
 |-|-|-|
 |`tests/test\_data.py`|3 (contrato válido y mapeo de ciudades, contrato rechaza datos inválidos, partición sin fuga)|Raimi|
 |`tests/test\_models.py`|5 (3 parametrizadas de rango/cobertura, contexto cambia ranking, intereses y exclusión de vistos)|Mario|
 |`tests/test\_evaluate.py`|3 (métricas calculadas a mano, objetivos sin historial, subgrupos pequeños no interpretables)|Victoria|
-|`tests/test\_dss.py`, `tests/test\_integration.py`|6 (STOP por cobertura, abstención y explicación, diversidad y restricciones imposibles, revisión por poca evidencia, flujo real de punta a punta, app compila)|Alexis|
+|`tests/test\_dss.py`, `tests/test\_integration.py`|7 (STOP por cobertura, explicación tipo vs. familia temática, abstención y explicación, diversidad y restricciones imposibles, revisión por poca evidencia, flujo real de punta a punta, app compila)|Alexis|
 
 ## Defensa individual
 

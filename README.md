@@ -7,7 +7,7 @@ abstención y revisión humana.
 
 - Asignatura: INF-8239 Ciencia de Datos II · UASD · Trabajo final
 - Equipo (4): Raimi De Jesús, Mario, Victoria, Alexis · reparto formal en [docs/RACI.md](docs/RACI.md)
-- Alcance comprometido (4–5 integrantes): baseline + 2 modelos, ≥ 8 pruebas (hay 17), documentación, demostración
+- Alcance comprometido (4–5 integrantes): baseline + 2 modelos, ≥ 8 pruebas (hay 18), documentación, demostración
   y distribución formal de responsabilidades.
 
 ## Ejecución (Windows PowerShell o Linux)
@@ -18,7 +18,7 @@ uv sync                                    # crea .venv con las versiones de uv.
 uv run python scripts/prepare_data.py      # contrato de datos + data/processed + reports/data_audit.json
 uv run python scripts/train_evaluate.py    # ajuste (2018), prueba (2019-2022), subgrupos, Green AI (~1-2 min)
 uv run python scripts/diagnose_subgroup.py # diagnóstico del subgrupo África
-uv run pytest -q                           # 17 pruebas (las de integración se omiten si no hay datos reales)
+uv run pytest -q                           # 18 pruebas (las de integración se omiten si no hay datos reales)
 uv run streamlit run app.py                # interfaz del DSS
 ```
 
