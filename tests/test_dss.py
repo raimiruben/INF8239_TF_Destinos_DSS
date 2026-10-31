@@ -36,6 +36,15 @@ def test_diversity_rule_and_impossible_constraints(dss):
     assert blocked.status == "STOP"
 
 
+def test_explanation_distinguishes_exact_type_from_family(dss):
+    # Interés: History Museums (Cultura), que no existe en Bali; el templo (Religious Sites) solo comparte familia
+    result = dss.recommend(Context(city="Bali", mode="Couples", continent="Asia", interests=["History Museums"]))
+    temple = next(i for i in result.items if i.type == "Religious Sites")
+    assert not any("tipo «Religious Sites», que te interesa" in r for r in temple.reasons)
+    assert any("misma familia temática (Cultura)" in r for r in temple.reasons)
+    assert any("Ninguno de los intereses declarados" in w for w in result.warnings)
+
+
 def test_low_evidence_context_requires_human_review(dss):
     result = dss.recommend(Context(city="Malang", mode="Solo", continent="Asia", interests=["Volcanos"]))
     assert result.status == "REVIEW"
